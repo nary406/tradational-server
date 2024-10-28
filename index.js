@@ -114,7 +114,7 @@ app.post("/newemp", async (req, res) => {
 
 // GET API call
 app.get('/userdetails', async (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+   
     try {
         const employees = await UserProfile.find(); 
 
@@ -122,6 +122,7 @@ app.get('/userdetails', async (req, res) => {
     } catch (error) {
         console.error('Error fetching employees:', error);
         res.status(500).json({ message: 'Internal server error' });
+        res.sendFile(path.join(__dirname, 'index.html'));
     }
 });
 

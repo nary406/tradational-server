@@ -114,6 +114,7 @@ app.post("/newemp", async (req, res) => {
 
 // GET API call
 app.get('/userdetails', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
     try {
         const employees = await UserProfile.find(); 
 
